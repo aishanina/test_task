@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+<form name="task1">
+<b>Первое число:</b></br>
+<input type="text" id="fnum" placeholder="Введите значение"></input></p>
+<b>Второе число:</b></br>
+<input type="text" id="snum" placeholder="Введите значение"></input>
+</p><input type="button" id="sum" value="Сложить" />
+</form>
+<script>
+function sumForm(e){
+  
+  	// получаем значение введенных чисел
+    var fnumBox = parseFloat(document.getElementById("fnum").value);
+    var snumBox = parseFloat(document.getElementById("snum").value);
+    
+    // проверяем, что введены числа
+    if (isNaN(fnumBox)==true) fnumBox=0;
+    if (isNaN(snumBox)==true) snumBox=0;
+    
+    //суммируем, исключая неточность чисел
+    var res = (fnumBox*10 + snumBox*10)/10;
+    alert(res);
+}
+ 
+document.getElementById("sum").onclick = sumForm;
+</script>
+</body>
+</html>
